@@ -53,6 +53,9 @@ fi
 #port=$(bashio::addon.port 80)
 ingress_port=$(bashio::addon.ingress_port)
 ingress_interface=$(bashio::addon.ip_address)
+echo ${ingress_port}
+echo ${ingress_interface}
+
 sed -i "s|%%protocol%%|${ADDON_PROTOCOL}|g" /etc/nginx/servers/ingress.conf
 sed -i "s|%%port%%|${ingress_port}|g" /etc/nginx/servers/ingress.conf
 sed -i "s|%%interface%%|${ingress_interface}|g" /etc/nginx/servers/ingress.conf

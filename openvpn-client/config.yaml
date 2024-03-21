@@ -5,7 +5,6 @@ slug: openvpn
 description: OpenVPN Client
 url: https://github.com/haklai/haklai-hassio-addons/
 ingress: true
-ingress_port: 1337
 ingress_stream: true
 panel_icon: mdi:chart-areaspline
 startup: application
