@@ -1,0 +1,16 @@
+name: Axios
+version: dev
+slug: axios
+description: Connect Hassio to a remote VPN Server
+startup: services
+arch:
+  - armv7
+  - aarch64
+  - amd64
+host_network: true
+privileged:
+  - NET_ADMIN
+map:
+  - share:rw
+ingress: true
+ingress_stream: true

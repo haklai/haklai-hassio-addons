@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload with Axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<form id="uploadForm" onsubmit="uploadFile(event)">
+    <input type="file" id="fileInput" name="file"/>
+    <button type="submit">Upload File</button>
+</form>
+<script>
+    function uploadFile(event) {
+        event.preventDefault();
+        const formData = new FormData();
+        const fileInput = document.getElementById('fileInput');
+        formData.append("file", fileInput.files[0]);
+
+        axios.post('%%subpath%%/test', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }).then(function (response) {
+            console.log('Success:', response);
+        }).catch(function (error) {
+            console.log('Error:', error);
+        });
+    }
+</script>
+</body>
+</html>
